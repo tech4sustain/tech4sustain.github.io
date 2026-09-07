@@ -347,7 +347,7 @@
                 </p>
 
                 <div class="countdown"
-                     aria-live="polite">
+                     aria-live="off">
 
                     <div>
                         <strong id="days">000</strong>
@@ -370,6 +370,7 @@
                     </div>
 
                 </div>
+                <p class="countdown-date"><span class="countdown-date-dot" aria-hidden="true"></span><time datetime="2026-12-19">19–20 December 2026</time><span class="countdown-location">Nadiad, Gujarat</span></p>
 
             </div>
 
@@ -2584,9 +2585,9 @@
 
 
 <link rel="stylesheet" href="chatbot.css">
-<button id="ca-launch" class="ca-launch" aria-controls="ca-panel" aria-expanded="false" type="button"><span aria-hidden="true">&#9993;</span> Conference Assistant</button>
+<button id="ca-launch" class="ca-launch" aria-label="Open automated conference guide" aria-controls="ca-panel" aria-expanded="false" type="button"><span aria-hidden="true">&#9993;</span> Help</button>
 <aside id="ca-panel" class="ca-panel" aria-labelledby="ca-title" hidden>
- <header class="ca-header"><span class="ca-avatar" aria-hidden="true">T4</span><div><strong id="ca-title">Tech4Sustain Assistant</strong><small>Conference guide &middot; Available anytime</small></div><button id="ca-close" type="button" aria-label="Close assistant">&times;</button></header>
+ <header class="ca-header"><span class="ca-avatar" aria-hidden="true">T4</span><div><strong id="ca-title">Tech4Sustain Assistant</strong><small>Automated conference guide</small></div><button id="ca-close" type="button" aria-label="Close assistant">&times;</button></header>
  <nav class="ca-toolbar" aria-label="Conversation controls"><button id="ca-home" type="button">Topics</button><button id="ca-export" type="button">Save chat</button><button id="ca-reset" type="button">New chat</button></nav>
  <div id="ca-log" class="ca-log" role="log" aria-live="polite" aria-relevant="additions" aria-label="Conference conversation" tabindex="0"></div>
  <div id="ca-choices" class="ca-choices" aria-label="Follow-up questions"></div>

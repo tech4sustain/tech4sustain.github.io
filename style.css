@@ -4,6 +4,17 @@
 ========================================================= */
 
 :root {
+    /* Shared content rhythm and type scale. */
+    --section-space: 28px;
+    --content-gap: 24px;
+    --card-space: 24px;
+    --card-radius: 12px;
+    --heading-section: clamp(1.9rem, 3.8vw, 2.75rem);
+    --heading-subsection: clamp(1.25rem, 2.3vw, 1.6rem);
+    --heading-card: 1.05rem;
+    --copy-size: 1rem;
+    --copy-width: 68ch;
+
 
     --orange: #ef5423;
     --orange-dark: #d84519;
@@ -1151,8 +1162,7 @@ body > .skiptranslate {
 
 .section {
 
-    padding:
-        100px 0;
+    padding: var(--section-space) 0;
 }
 
 
@@ -1169,14 +1179,13 @@ body > .skiptranslate {
 
 .section-heading {
 
-    max-width: 820px;
-
-    margin-bottom: 50px;
+    max-width: var(--copy-width);
+    margin-bottom: var(--content-gap);
 }
 
 
 .wide-heading {
-    max-width: 980px;
+    max-width: var(--copy-width);
 }
 
 
@@ -1201,7 +1210,7 @@ body > .skiptranslate {
     color: var(--black);
 
     font-size:
-        clamp(2.3rem,4.8vw,3.3rem);
+        var(--heading-section);
 
     line-height: 1.1;
 
@@ -1217,7 +1226,8 @@ body > .skiptranslate {
 
     color: var(--muted);
 
-    font-size: 1.04rem;
+    font-size: var(--copy-size);
+    max-width: var(--copy-width);
 }
 
 
@@ -1345,8 +1355,7 @@ body > .skiptranslate {
 
 .theme-section {
 
-    padding:
-        5px 0 100px;
+    padding: var(--section-space) 0;
 }
 
 
@@ -4153,7 +4162,7 @@ body.high-contrast .topic-list span {
 
 
     .section {
-        padding: 72px 0;
+        padding: var(--section-space) 0;
     }
 
 
@@ -4530,37 +4539,19 @@ body.high-contrast .topic-list span {
     }
 }
 /* Keep the guidelines close to the discipline cards. */
-#participation {
-    padding-top: 28px;
-    padding-bottom: 28px;
-}
 
-#guidelines {
-    padding-top: 28px;
-    padding-bottom: 28px;
-}
 
-.theme-section {
-    padding-bottom: 28px;
-}
 
-#dates {
-    padding-top: 28px;
-}
 
-#sponsorship {
-    padding-top: 28px;
-    padding-bottom: 28px;
-}
 
-#faq {
-    padding-top: 28px;
-    padding-bottom: 28px;
-}
 
-.venue-section {
-    padding-top: 28px;
-}
+
+
+
+
+
+
+
 
 .venue-grid .venue-hall {
     color: var(--black);
@@ -4569,13 +4560,10 @@ body.high-contrast .topic-list span {
     margin-bottom: 12px;
 }
 
-.contact-section {
-    padding-top: 28px;
-    padding-bottom: 28px;
-}
+
 
 .governance-section {
-    padding: 28px 0;
+    padding: var(--section-space) 0;
     scroll-margin-top: 100px;
 }
 
@@ -4633,9 +4621,7 @@ body.high-contrast .topic-list span {
         grid-template-columns: 1fr;
     }
 }
-#publication {
-    padding-bottom: 28px;
-}
+
 
 .hero {
     min-height: auto;
@@ -4772,4 +4758,126 @@ body.high-contrast .topic-list span {
 
 .top-strip-details span {
     display: block;
+}
+/* Refined conference countdown */
+.countdown-card {
+    padding: 24px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-top: 3px solid var(--orange);
+    border-radius: 18px;
+    background: linear-gradient(135deg, #292321, #191919);
+    box-shadow: 0 16px 40px rgba(0,0,0,.2);
+}
+
+.countdown-card .countdown-title {
+    margin-bottom: 18px;
+    color: #ff9875;
+    font-size: .72rem;
+    letter-spacing: 1.8px;
+}
+
+.countdown-card .countdown {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.countdown-card .countdown > div {
+    padding: 18px 4px 14px;
+    background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.025));
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+}
+
+.countdown-card .countdown > div:first-child {
+    border-color: rgba(255,121,80,.5);
+    background: linear-gradient(180deg, rgba(239,84,35,.22), rgba(239,84,35,.06));
+}
+
+.countdown-card .countdown strong {
+    font-size: clamp(1.5rem, 2.8vw, 2.35rem);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.15;
+    letter-spacing: -.5px;
+    font-weight: 750;
+}
+
+.countdown-card .countdown span {
+    display: block;
+    margin-top: 9px;
+    color: #d0c6c1;
+    font-size: .6rem;
+    letter-spacing: 1px;
+}
+
+.countdown-date {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 17px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    color: #ece4df;
+    font-size: .7rem;
+}
+
+.countdown-date-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--orange-soft);
+}
+
+.countdown-location {
+    margin-left: auto;
+    color: #bcb1aa;
+}
+
+@media (max-width: 480px) {
+    .countdown-card { padding: 18px 14px; }
+    .countdown-card .countdown { gap: 6px; }
+    .countdown-card .countdown span { font-size: .55rem; letter-spacing: .5px; }
+}
+/* Consistent section content and card styling; header and hero stay independent. */
+.section .section-heading h2,
+.venue-grid h2,
+.theme-box h2 {
+    font-size: var(--heading-section);
+    line-height: 1.15;
+    letter-spacing: -.025em;
+}
+.section :is(.subsection-title, .discipline-research > h3, .submission-method h3, .about-content h3) {
+    font-size: var(--heading-subsection);
+    line-height: 1.3;
+}
+.section :is(.fact-card, .process-card, .governance-card, .governance-committee, .submission-method, .discipline-card, .structure-grid > div, .common-track-list li) {
+    border-radius: var(--card-radius);
+    border-color: var(--line);
+    padding: var(--card-space);
+}
+.section .submission-method { border-top-color: var(--orange); }
+.section :is(.governance-card, .governance-committee, .common-track-list li) { border-left-color: var(--orange); }
+.section :is(.faq-item, .discipline-research-group, .timeline-card) {
+    border-radius: var(--card-radius);
+    border-color: var(--line);
+}
+.section :is(.process-card h3, .governance-card h3, .governance-committee h3, .structure-grid strong, .fact-card strong) {
+    font-size: var(--heading-card);
+    line-height: 1.4;
+}
+.section :is(.section-heading p, .about-content p, .submission-method > p, .faq-answer p, .venue-grid > div > p) {
+    font-size: var(--copy-size);
+    line-height: 1.7;
+    max-width: var(--copy-width);
+}
+.section :is(.structure-grid, .governance-grid, .submission-methods) { gap: 16px; }
+.section :is(.submission-methods, .discipline-research) { margin-top: 32px; }
+.section .subsection-title { margin-bottom: var(--content-gap); }
+.section .manuscript-heading .subsection-title { margin-bottom: 0; }
+@media (max-width: 700px) {
+    :root {
+        --section-space: 24px;
+        --content-gap: 20px;
+        --card-space: 18px;
+    }
 }

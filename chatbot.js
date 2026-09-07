@@ -76,7 +76,17 @@ function append(reply,user=false){
  const article=document.createElement('article');article.className='ca-message'+(user?' ca-user':'');
  const label=document.createElement('small');label.textContent=user?'You':'Tech4Sustain Assistant';article.append(label);
  if(reply.title){const title=document.createElement('h3');title.textContent=reply.title;article.append(title);}
- const body=document.createElement('p');body.textContent=reply.text;article.append(body);
+ const body=document.createElement('p');
+ const fullText=reply.text || '';
+ if(!user && fullText.length>320){
+  const preview=fullText.slice(0,300);
+  const breakAt=Math.max(preview.lastIndexOf('. '),preview.lastIndexOf('\n'));
+  body.textContent=(breakAt>100?preview.slice(0,breakAt+1):preview.slice(0,preview.lastIndexOf(' ')))+'?';
+  article.append(body);
+  const more=document.createElement('button');more.type='button';more.className='ca-more';more.textContent='Show full answer';more.setAttribute('aria-expanded','false');
+  const shortText=body.textContent;
+  more.addEventListener('click',()=>{const expanded=more.getAttribute('aria-expanded')==='true';body.textContent=expanded?shortText:fullText;more.setAttribute('aria-expanded',String(!expanded));more.textContent=expanded?'Show full answer':'Show less';});article.append(more);
+ }else{body.textContent=fullText;article.append(body);}
  (reply.links||[]).forEach(item=>{if(!item.href)return;const a=document.createElement('a');a.href=item.href;a.textContent=item.label;if(!/^(#|mailto:|tel:)/.test(item.href)){a.target='_blank';a.rel='noopener noreferrer';a.textContent+=' ↗';}article.append(a);});
  log.append(article);history.push((user?'You':'Assistant')+': '+(reply.title||'')+'\n'+reply.text);log.scrollTop=log.scrollHeight;
  if(!user){choices.replaceChildren();(reply.choices||[]).forEach(label=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.addEventListener('click',()=>send(label));choices.append(b);});}
