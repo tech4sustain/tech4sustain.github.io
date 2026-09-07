@@ -400,75 +400,7 @@
 
 
 
-<section class="logo-band">
 
-    <div class="container">
-
-        <p class="logo-band-heading">
-            HOST INSTITUTION & PROGRAMME ASSOCIATION
-        </p>
-
-
-        <div class="logo-grid">
-
-            <div class="logo-card">
-
-                <img src="images/ddu-logo.jpg"
-                     alt="DDU Logo">
-
-                <div>
-                    <strong>
-                        Dharmsinh Desai University
-                    </strong>
-
-                    <span>
-                        Host Institution · Nadiad
-                    </span>
-                </div>
-
-            </div>
-
-
-            <div class="logo-card">
-
-                <img src="images/aicte-logo.jpg"
-                     alt="AICTE Logo">
-
-                <div>
-                    <strong>
-                        AICTE
-                    </strong>
-
-                    <span>
-                        All India Council for Technical Education
-                    </span>
-                </div>
-
-            </div>
-
-
-            <div class="logo-card">
-
-                <img src="images/atal-logo.png"
-                     alt="ATAL Academy Logo">
-
-                <div>
-                    <strong>
-                        AICTE Training and Learning Academy
-                    </strong>
-
-                    <span>
-                        VAANI 2026–27
-                    </span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 
 
 
@@ -2639,7 +2571,7 @@
             </span>
 
             <span>
-                AICTE–VAANI · Zero Registration Fee
+                AICTE–VAANI
             </span>
 
         </div>
@@ -2662,6 +2594,19 @@
 <!-- =========================================================
      JAVASCRIPT
 ========================================================= -->
+
+
+<link rel="stylesheet" href="chatbot.css">
+<button id="ca-launch" class="ca-launch" aria-controls="ca-panel" aria-expanded="false" type="button"><span aria-hidden="true">&#9993;</span> Conference Assistant</button>
+<aside id="ca-panel" class="ca-panel" aria-labelledby="ca-title" hidden>
+ <header class="ca-header"><span class="ca-avatar" aria-hidden="true">T4</span><div><strong id="ca-title">Tech4Sustain Assistant</strong><small>Conference guide &middot; Available anytime</small></div><button id="ca-close" type="button" aria-label="Close assistant">&times;</button></header>
+ <nav class="ca-toolbar" aria-label="Conversation controls"><button id="ca-home" type="button">Topics</button><button id="ca-export" type="button">Save chat</button><button id="ca-reset" type="button">New chat</button></nav>
+ <div id="ca-log" class="ca-log" role="log" aria-live="polite" aria-relevant="additions" aria-label="Conference conversation" tabindex="0"></div>
+ <div id="ca-choices" class="ca-choices" aria-label="Follow-up questions"></div>
+ <form id="ca-form" class="ca-form"><label for="ca-input">Ask a conference question</label><div><input id="ca-input" maxlength="500" autocomplete="off" placeholder="e.g. What is the paper deadline?" required><button type="submit" aria-label="Send question">Send &#8594;</button></div></form>
+ <footer class="ca-footer">Automated website guide, not a live agent.<br><a href="#contact">Contact the organizing team</a> for confirmation.</footer>
+</aside>
+<script src="chatbot.js"></script>
 
 <script src="script.js"></script>
 
