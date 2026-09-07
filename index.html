@@ -34,11 +34,13 @@
      ACCESSIBILITY BAR
 ========================================================= -->
 
+<div class="site-header-bars">
 <div class="top-strip">
 
     <div class="container top-strip-inner">
 
         <div class="top-strip-info">
+            <img src="images/aicte-logo.jpg" alt="AICTE" class="top-strip-logo">
 
             <span>
                 AICTE–VAANI 2026–27
@@ -55,12 +57,8 @@
             <span>
                 DDU, Nadiad, Gujarat
             </span>
-
             <span class="top-divider">|</span>
-
-            <span class="zero-fee-top">
-                Zero Registration Fee
-            </span>
+            <img src="images/atal-logo.png" alt="AICTE Training and Learning Academy (ATAL)" class="top-strip-logo">
 
         </div>
 
@@ -218,6 +216,7 @@
     </div>
 
 </header>
+</div>
 
 
 
@@ -314,19 +313,19 @@
                 <a href="https://atalacademy.aicte.gov.in/login"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="btn btn-secondary"
+                   class="btn btn-primary"
                    data-track-event="registration">
                     Register on ATAL
                 </a>
 
                 <a href="#participation"
-                   class="btn btn-outline-light">
+                   class="btn btn-primary">
                     Explore Research Areas
                 </a>
                 <a href="downloads/Brochure_Tech4Sustain_2026.pdf"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="btn btn-outline-light"
+                   class="btn btn-primary"
                    data-track-event="brochure_download">
                     Download Brochure
                 </a>
@@ -401,75 +400,7 @@
 
 
 
-<section class="logo-band">
 
-    <div class="container">
-
-        <p class="logo-band-heading">
-            HOST INSTITUTION & PROGRAMME ASSOCIATION
-        </p>
-
-
-        <div class="logo-grid">
-
-            <div class="logo-card">
-
-                <img src="images/ddu-logo.jpg"
-                     alt="DDU Logo">
-
-                <div>
-                    <strong>
-                        Dharmsinh Desai University
-                    </strong>
-
-                    <span>
-                        Host Institution · Nadiad
-                    </span>
-                </div>
-
-            </div>
-
-
-            <div class="logo-card">
-
-                <img src="images/aicte-logo.jpg"
-                     alt="AICTE Logo">
-
-                <div>
-                    <strong>
-                        AICTE
-                    </strong>
-
-                    <span>
-                        All India Council for Technical Education
-                    </span>
-                </div>
-
-            </div>
-
-
-            <div class="logo-card">
-
-                <img src="images/atal-logo.png"
-                     alt="ATAL Academy Logo">
-
-                <div>
-                    <strong>
-                        AICTE Training and Learning Academy
-                    </strong>
-
-                    <span>
-                        VAANI 2026–27
-                    </span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 
 
 
@@ -2640,7 +2571,7 @@
             </span>
 
             <span>
-                AICTE–VAANI · Zero Registration Fee
+                AICTE–VAANI
             </span>
 
         </div>
@@ -2664,6 +2595,21 @@
      JAVASCRIPT
 ========================================================= -->
 
+<button class="chat-launcher" id="chatLauncher" type="button" aria-expanded="false" aria-controls="conferenceChat"><span aria-hidden="true">&#9993;</span> Ask Tech4Sustain</button>
+<aside class="conference-chat" id="conferenceChat" aria-labelledby="chatTitle" hidden>
+  <div class="chat-header">
+    <span class="chat-avatar" aria-hidden="true">T4</span>
+    <div class="chat-heading"><strong id="chatTitle">Conference Assistant</strong><small>Tech4Sustain 2026 &middot; Automated guide</small></div>
+    <button id="chatReset" type="button" aria-label="Start new conversation" title="Start new conversation">&#8635;</button>
+    <button id="chatClose" type="button" aria-label="Close conference help">&times;</button>
+  </div>
+  <div class="chat-context">Your guide to submissions, tracks &amp; conference details</div>
+  <div class="chat-messages" id="chatMessages" role="log" aria-live="polite" aria-label="Chat messages"></div>
+  <div class="chat-suggestions" aria-label="Suggested questions"><button type="button">Submission deadline</button><button type="button">Research tracks</button><button type="button">Download guidelines</button><button type="button">Contact organizers</button></div>
+  <form id="chatForm" class="chat-form"><label class="chat-input-label" for="chatInput">Your question</label><input id="chatInput" maxlength="500" placeholder="Type your question..." autocomplete="off" required><button type="submit" aria-label="Send message">Send &#8594;</button></form>
+  <div class="chat-footer">Conference information &middot; <a href="#contact">Contact the organizing team</a></div>
+</aside>
+<script src="chatbot.js"></script>
 <script src="script.js"></script>
 
 

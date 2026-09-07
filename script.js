@@ -2750,7 +2750,7 @@ document.addEventListener(
 
                             const header =
                                 document.querySelector(
-                                    ".header"
+                                    ".site-header-bars"
                                 );
 
 
