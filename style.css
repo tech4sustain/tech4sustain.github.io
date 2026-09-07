@@ -4756,3 +4756,20 @@ body.high-contrast .topic-list span {
     .chat-launcher { right: 14px; bottom: 22px; }
     .back-to-top { right: auto; left: 14px; }
 }
+
+.top-strip-info {
+    flex-wrap: nowrap;
+    gap: 14px;
+}
+
+.top-strip-details {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.5;
+    padding: 8px 0;
+}
+
+.top-strip-details span {
+    display: block;
+}
