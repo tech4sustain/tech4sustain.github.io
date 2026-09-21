@@ -877,6 +877,16 @@ body > .skiptranslate {
 }
 
 
+.btn-noc {
+    color: #14251f;
+    background: linear-gradient(135deg, #6ee7b7, #34d399);
+    box-shadow: 0 12px 26px rgba(52, 211, 153, .24);
+}
+
+.btn-noc:hover {
+    background: linear-gradient(135deg, #a7f3d0, #6ee7b7);
+}
+
 .btn-secondary {
 
     color: white;
@@ -4640,14 +4650,14 @@ body.high-contrast .topic-list span {
 @media (min-width: 701px) {
     .hero-buttons {
         display: grid;
-        grid-template-columns: 1.15fr .95fr 1.2fr 1fr;
+        grid-template-columns: 1.15fr .95fr 1.2fr 1fr 1.15fr;
         gap: 8px;
     }
 
     .hero-buttons .btn {
         min-width: 0;
         padding: 12px 8px;
-        font-size: .72rem;
+        font-size: clamp(.58rem, .85vw, .72rem);
         white-space: nowrap;
     }
 }
